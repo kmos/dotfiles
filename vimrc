@@ -38,3 +38,7 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-g> :GundoToggle<CR>
+
+"paste code without automatic indentation
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
