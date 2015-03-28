@@ -1,2 +1,2 @@
 # dotfiles
-dotfiles from my linux box
+dotfiles from my Gentoo box
