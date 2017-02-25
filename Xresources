@@ -1,31 +1,10 @@
-! Base16 Monokai
-! ! Scheme: Wimer Hazenberg (http://www.monokai.nl)
-!
-! Molokai theme
-*background: #101010
-*foreground: #d0d0d0
-*cursorColor: #d0d0d0
-*color0: #101010
-*color1: #960050
-*color2: #66aa11
-*color3: #c47f2c
-*color4: #30309b
-*color5: #7e40a5
-*color6: #3579a8
-*color7: #9999aa
-*color8: #303030
-*color9: #ff0090
-*color10: #80ff00
-*color11: #ffba68
-*color12: #5f5fee
-*color13: #bb88dd
-*color14: #4eb4fa
-*color15: #d0d0d0
 
+#include ".Xresources.d/solarized"
+URxvt.intensityStyles: false
 URxvt.scrollBar: false
 
 !!Font Config
-URxvt.font: xft:Inconsolata for Powerline-10
+URxvt.font: xft:Inconsolata for Powerline-12
 !!URxvt.font: xft:Ubuntu Mono derivative Powerline-10
 !!URxvt.font: xft:Monofur for Powerline
 !!URxvt.depth: 32
@@ -35,11 +14,11 @@ URxvt.font: xft:Inconsolata for Powerline-10
 !!URxvt.background: [85]#002b36
 
 !!for awesome desktop
-urxvt*transparent: true
-urxvt*shading: 30
+!!urxvt*transparent: true
+!!urxvt*shading: 30
 
 !!Perl Extensions
-URxvt.perl-ext-common:default,matcher,keyboard-select,clipboard
+URxvt.perl-ext-common:default,matcher,keyboard-select,clipboard,tabbed
 URxvt.keysym.M-u:     perl:url-select:select_next
 URxvt.url-launcher:   /usr/bin/firefox-bin
 URxvt.underlineURLs:  True
@@ -52,9 +31,19 @@ URxvt.copyCommand:   xsel -ip
 URxvt.pasteCommand:  xsel -op
 
 !!Xft config
-Xft.dpi:        132
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.autohint:  true
-Xft.hintstyle:  hintfull
+!!Xft.dpi:        160.0
+!!Xft.dpi: 160.0
+Xft.dpi: 96.0
+!!Xft.antialias:  true
+!!Xft.rgba:       rgb
+!!Xft.hinting:    true
+!!Xft.autohint:  true
+!!Xft.hintstyle:  hintfull
+
+!URxvt.keysym.C-p:   command:\033]710;xft:Unifont:pixelsize=20\007
+! Bind C--, C-0(=) and C-+ to activate small, medium, and big font size resp. 
+!URxvt.keysym.C-minus:   command:\033]710;xft:Liberation Mono:pixelsize=12\007
+URxvt.keysym.C-0: command:\033]710;xft:Inconsolata for Powerline-12\007
+URxvt.keysym.C-9: command:\033]710;xft:Inconsolata for Powerline-22\007
+!URxvt.keysym.C-plus:  command:\033]710;xft:Liberation Mono:pixelsize=20\007
+
