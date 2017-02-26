@@ -1,14 +1,18 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+  export ZSH=/home/mos/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="amuse"
+ZSH_THEME="bira"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -23,7 +27,7 @@ ZSH_THEME="amuse"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -45,39 +49,28 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm)
+plugins=(git, python, pip, pep8, sudo, virtualenv, npm, node, github, git-extras)
+
+autoload -U compinit promptinit
+compinit
+promptinit
 
 # User configuration
 
-export DEFAULT_USER="mos"
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.8.3:/usr/x86_64-pc-linux-gnu/gnat-gcc-bin/4.3:/usr/libexec/gnat-gcc/x86_64-pc-linux-gnu/4.3:/usr/games/bin:/home/mos/opt/node-webkit:/home/mos/.local/bin:/opt/android-sdk-update-manager/platform-tools/:/home/mos/opt/bin"
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
-
-## TMUX
- if which tmux >/dev/null 2>&1; then
-     # if no session is started, start a new session
-         test -z ${TMUX} && tmux
-
-             # when quitting tmux, try to attach
-                 while test -z ${TMUX}; do
-                        tmux attach || break
-                             done
-                             fi
-                             
 # You may need to manually set your language environment
-#export LANG="it_IT.UTF-8"
-#export LC_ALL="it_IT.UTF-8"
-#export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vim'
- fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -93,8 +86,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias rake="noglob rake"
-
-compctl -g '~/.teamocil/*(:t:r)' teamocil
-
-MAIL=/var/spool/mail/mos && export MAIL
